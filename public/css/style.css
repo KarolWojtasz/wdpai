@@ -1,0 +1,102 @@
+@font-face {
+    font-family: Karla;
+    src: url(/font/static/Karla-Medium.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    background: linear-gradient(89.93deg, #8F709D 0.07%, #230031 34.4%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    width: 50%;
+    text-align: center;
+    align-items: center;
+}
+
+#formContainer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formContainer form {
+    height: 75%;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+
+}
+
+h2 {
+    font-size: 50px;
+    height: 25%;
+    margin: 0;
+}
+
+#formContainer input {
+    margin: 30px;
+    height: 80px;
+    width: 65%;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid black;
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+
+}
+
+#formContainer input::placeholder {
+    color: black;
+    opacity: 0.5;
+}
+
+#whiteBox {
+    width: 75%;
+    height: 70vh;
+    background-color: #E1C5EF;
+    border-radius: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #E1C5EF;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 200px;
+    line-height: 117px;
+    text-decoration: underline;
+    margin-bottom: 80px;
+}
+
+h3 {
+    color: #E1C5EF;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 62px;
+    line-height: 37px;
+    margin-top: 0;
+}

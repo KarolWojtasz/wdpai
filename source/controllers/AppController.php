@@ -1,6 +1,7 @@
 <?php
 class AppController{
     protected function render(string $template = null){
+
         $templatePath = "public/views/".$template.".html";
         $output = "file not found";
         if(file_exists($templatePath)){
