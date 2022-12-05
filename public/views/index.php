@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    hello world
+    <nav></nav>
+    <section></section>
+    <footer></footer>
 </body>
 </html>

@@ -1,13 +1,17 @@
 <?php
 
 require_once "source/controllers/DefaultController.php";
+require_once "source/controllers/SecurityController.php";
 
 class Router{
     public static $routes;
 
-    public static function get($url, $controller){
-        self::$routes[$url] = $controller;
-    }
+    public static function get($url, $view) {
+        self::$routes[$url] = $view;
+      }
+    public static function post($url, $view) {
+        self::$routes[$url] = $view;
+      }
 
     public static function run($url){
         $action = explode("/",$url)[0];
@@ -17,6 +21,7 @@ class Router{
 
         $controller = self::$routes[$action];
         $object = new $controller;
+        $action = $action ?: 'login';
 
         $object->$action();
 
