@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Karla;
+    src: url(public/css/font/static/Karla-Medium.ttf);
+}
+
+h1 {
+    color: #E1C5EF;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 200px;
+    line-height: 117px;
+    text-decoration: underline;
+    margin-bottom: 80px;
+}
+
+h3 {
+    color: #E1C5EF;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 62px;
+    line-height: 37px;
+    margin-top: 0;
+}
+
+#container {
+    background: linear-gradient(89.93deg, #8F709D 0.07%, #230031 34.4%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #E1C5EF;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+
+nav a,
+img {
+
+    font-size: 40px;
+    text-decoration: none;
+    flex: 1 1 0;
+    width: 0;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    display: block;
+    border-left: 5px solid black;
+
+}
+
+nav img {
+    border: none;
+    flex: 0.6 0.6 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: auto;
+}

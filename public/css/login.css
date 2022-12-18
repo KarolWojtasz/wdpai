@@ -1,21 +1,5 @@
-@font-face {
-    font-family: Karla;
-    src: url(/font/static/Karla-Medium.ttf);
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
 #container {
-    background: linear-gradient(89.93deg, #8F709D 0.07%, #230031 34.4%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 section {
@@ -79,24 +63,4 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-h1 {
-    color: #E1C5EF;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 200px;
-    line-height: 117px;
-    text-decoration: underline;
-    margin-bottom: 80px;
-}
-
-h3 {
-    color: #E1C5EF;
-    font-family: 'Karla';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 62px;
-    line-height: 37px;
-    margin-top: 0;
 }

@@ -14,5 +14,8 @@ class DefaultController extends AppController{
     public function login(){
         $this->render("login");
     }
+    public function create(){
+        $this->render("create");
+    }
 }
 ?>
