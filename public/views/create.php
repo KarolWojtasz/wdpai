@@ -12,13 +12,7 @@
 </head>
 
 <body>
-    <nav>
-        <img src="public/img/logo.png" />
-        <a href="/plans">My plans</a>
-        <a href="/training">Start training</a>
-        <a href="/statistics">Statistics</a>
-        <a href="/logout">Logout</a>
-    </nav>
+    <?php include("nav.php"); ?>
     <div id="container">
 
         <h2>Create workout plan</h2>
