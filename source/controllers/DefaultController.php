@@ -20,5 +20,8 @@ class DefaultController extends AppController{
     public function statistics(){
         $this->render("statistics");
     }
+    public function training(){
+        $this->render("training");
+    }
 }
 ?>

@@ -9,6 +9,7 @@ Router::get('register', 'DefaultController');
 Router::get('login', 'DefaultController');
 Router::get('create', 'DefaultController');
 Router::get('statistics', 'DefaultController');
+Router::get('training', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::run($path);
 ?>
