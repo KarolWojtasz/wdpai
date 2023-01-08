@@ -3,4 +3,4 @@ FROM nginx:1.17.8-alpine
 
 COPY . /app/
 
-COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf

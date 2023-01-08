@@ -1,9 +1,10 @@
 <?php 
 require "Router.php";
-
+require "Database.php";
 $path = trim($_SERVER['REQUEST_URI'],'/');
 $path = parse_url($path,PHP_URL_PATH);
-
+$conn = new Database;
+$conn::connect();
 Router::get("index","DefaultController");
 Router::get('register', 'DefaultController');
 Router::get('login', 'DefaultController');
