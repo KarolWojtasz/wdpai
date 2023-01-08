@@ -18,9 +18,9 @@ class Database {
     {
         try {
             $conn = new PDO(
-                "pgsql:host=$this->host;port=5432;dbname=$this->database",
-                $this->username,
-                $this->password,
+                "pgsql:host=db;port=5432;dbname=dbname",
+                "dbuser",
+                "dbpwd",
                 ["sslmode"  => "prefer"]
             );
 
