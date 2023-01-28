@@ -22,10 +22,9 @@ class Database {
     {
         try {
 
-            $pdo = pg_connect("postgres://vkggaimu:jBESVv7RPmdwDhY7NfovaNrX9DnPfTNz@trumpet.db.elephantsql.com/vkggaimu");
-            if ($pdo) {
-                return $pdo;
-            }
+            $conn = pg_connect($this->connection_string);
+            return $conn;
+            
         } catch (PDOException $e) {
             echo "ERROR";
             return null;
