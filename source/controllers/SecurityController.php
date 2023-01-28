@@ -15,6 +15,7 @@ class SecurityController extends AppController{
         $username = $_POST['username'];
         $password = $_POST['password'];
 
+        
         if ($user->getUsername() !== $username) {
             return $this->render('login', ['messages' => ['User with this username not exist!']]);
         }
