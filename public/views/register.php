@@ -19,6 +19,13 @@
                     <input type="text" name="username" placeholder="USERNAME" />
                     <input type="password" name="password" placeholder="PASSWORD" />
                     <input type="submit" value="OK" />
+                    <?php
+                    if (isset($messages)) {
+                        foreach ($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
                 </form>
             </div>
         </section>
