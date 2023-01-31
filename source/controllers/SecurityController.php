@@ -22,6 +22,8 @@ class SecurityController extends AppController
         }
 
         if (password_verify($password, $user->getPassword())) {
+            $_SESSION["user_id"] = $user->getId();
+            $_SESSION["user_username"] = $user->getUsername();
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/index");
         } else {
@@ -42,10 +44,19 @@ class SecurityController extends AppController
         if ($user) {
             return $this->render('register', ['messages' => ['User with this username already exist!']]);
         }
-        $user = new User($username, password_hash($password, PASSWORD_DEFAULT));
+        $user = new User(1, $username, password_hash($password, PASSWORD_DEFAULT));
 
-        $userRepository->addUser($user);
 
-        return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
+        if ($userRepository->addUser($user))
+            return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
+        else {
+            return $this->render('register', ['messages' => ['Problem with registration!']]);
+        }
+    }
+    public function logout()
+    {
+        unset($_SESSION["user_id"]);
+        unset($_SESSION["user_username"]);
+        return $this->render('login', ['messages' => ['You\'ve been logged out!']]);
     }
 }

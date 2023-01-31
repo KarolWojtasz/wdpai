@@ -8,12 +8,12 @@ class UserRepository extends Repository
 
     public function getUser(string $username): ?User
     {
-        $result  = pg_query($this->connection, "SELECT username, password FROM users WHERE username = '" . $username . "'");
+        $result  = pg_query($this->connection, "SELECT id,username, password FROM users WHERE username = '" . $username . "'");
         if (!$result) {
             return null;
         }
         while ($row = pg_fetch_row($result)) {
-            $user = new User($row[0], $row[1]);
+            $user = new User($row[0], $row[1], $row[2]);
         }
         if (!$user) {
             return null;
@@ -26,6 +26,10 @@ class UserRepository extends Repository
             INSERT INTO users (username, password, type)
             VALUES ('" . $user->getUsername() . "', '" . $user->getPassword() . "', 'normal')
         ");
-        var_dump($result);
+        if (!$result) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

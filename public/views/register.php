@@ -26,6 +26,7 @@
                         }
                     }
                     ?>
+                    <a href="/login">Already registered? Login here.</a>
                 </form>
             </div>
         </section>

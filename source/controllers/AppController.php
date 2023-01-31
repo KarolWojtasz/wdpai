@@ -1,5 +1,7 @@
 <?php
-class AppController{
+
+class AppController
+{
     public $request;
     public function __construct()
     {
@@ -15,16 +17,17 @@ class AppController{
     {
         return $this->request === 'POST';
     }
-    protected function render(string $template = null, array $variables = []){
+    protected function render(string $template = null, array $variables = [])
+    {
 
-        $templatePath = "public/views/".$template.".php";
+        $templatePath = "public/views/" . $template . ".php";
         $output = "file not found";
 
-        if(file_exists($templatePath)){
+        if (file_exists($templatePath)) {
             extract($variables);
             ob_start();
             include $templatePath;
-            $output= ob_get_clean();
+            $output = ob_get_clean();
         }
         print $output;
     }

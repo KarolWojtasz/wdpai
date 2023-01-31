@@ -18,14 +18,16 @@
                 <form method="POST" action="login">
                     <input type="text" name="username" placeholder="USERNAME" />
                     <input type="password" name="password" placeholder="PASSWORD" />
-                    <input type="submit" value="OK"/>
+                    <input type="submit" value="OK" />
                     <?php
-                    if(isset($messages)){
-                        foreach($messages as $message){
+                    if (isset($messages)) {
+                        foreach ($messages as $message) {
                             echo $message;
                         }
                     }
-                ?>
+                    ?>
+                    <a href="/register">Dont't have an account register here.</a>
+
                 </form>
 
             </div>

@@ -32,4 +32,6 @@ RUN apk add --no-cache --virtual .run-deps $RUN_DEPS
 # Copy the application code
 COPY . /app
 
+RUN echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
+
 VOLUME ["/app"]
