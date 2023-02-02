@@ -10,8 +10,8 @@ h2 {
     justify-content: space-evenly;
 }
 
-input,
-button {
+#buttonsContainer input,
+#buttonsContainer button {
     margin: 10px;
     height: 60px;
     width: 300px;
@@ -22,4 +22,64 @@ button {
     cursor: pointer;
     text-align: center;
     color: black;
+}
+
+#trainingContainer input,
+#trainingContainer button,
+#trainingContainer select {
+    margin: 10px;
+    height: 40px;
+    width: 40%;
+    border-radius: 20px;
+    background-color: #E1C5EF;
+    border: 2px solid black;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+}
+
+#trainingContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+#trainingContainer .readyDay {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    background-color: #E1C5EF;
+    height: 30em;
+    margin-top: 2em;
+    border-radius: 20px;
+}
+
+#trainingContainer .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+
+}
+
+#editableSection {
+    position: absolute;
+    display: flex;
+    width: 54%;
+    height: auto;
+    left: 23%;
+    background-color: #E1C5EF;
+    border: 2px solid black;
+    border-radius: 30px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#editableSection img {
+    width: 30px;
+    height: 30px;
+    display: block;
 }
