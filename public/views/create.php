@@ -16,26 +16,16 @@
     <div id="container">
 
         <h2>Create workout plan</h2>
+        <label>Type name of training:<input id="trainingName" type="text" /></label>
         <div id="trainingContainer">
-            <section class="readyDay">
-                <input type="text" name="dayTitle">
-                <div class="row">
-                    <img src="" />
-                    <select></select>
-                    <input type="number" name="sets">
-                    <input type="number" name="reps">
 
-                </div>
-                <button name="addExercise">+ Add next exercise</button>
-                <button name="saveTrainingDay">Save Training Day</button>
-            </section>
 
         </div>
         <div id="buttonsContainer">
             <button id="addDay">+ Add next training day</button>
-            <form>
-                <input type="submit" value="Save workout plan">
-            </form>
+            <button id="savePlan">Save workout plan</button>
+
+
         </div>
     </div>
 </body>

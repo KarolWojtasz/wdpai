@@ -12,4 +12,6 @@ Router::get('training', 'DefaultController');
 Router::get('logout', 'SecurityController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
+//Router::post('create', 'SecurityController');
+
 Router::run($path);

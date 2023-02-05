@@ -23,9 +23,10 @@ class UserRepository extends Repository
     public function addUser(User $user)
     {
         $result  = pg_query($this->connection, "
-            INSERT INTO users (username, password, type)
-            VALUES ('" . $user->getUsername() . "', '" . $user->getPassword() . "', 'normal')
+            INSERT INTO users (username, password)
+            VALUES ('" . $user->getUsername() . "', '" . $user->getPassword() . "')
         ");
+        echo $result;
         if (!$result) {
             return false;
         } else {

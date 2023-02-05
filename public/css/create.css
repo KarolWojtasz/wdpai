@@ -3,6 +3,11 @@ h2 {
     font-size: 60px;
 }
 
+label {
+    color: white;
+    font-size: 30px;
+}
+
 #container {
     flex-direction: column;
     height: max-content;
@@ -11,7 +16,8 @@ h2 {
 }
 
 #buttonsContainer input,
-#buttonsContainer button {
+#buttonsContainer button,
+#trainingName {
     margin: 10px;
     height: 60px;
     width: 300px;
@@ -79,7 +85,7 @@ h2 {
 }
 
 #editableSection img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: block;
 }
