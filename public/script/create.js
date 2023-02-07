@@ -130,14 +130,30 @@ document.getElementById("savePlan").addEventListener("click", function () {
             obj.trainingDays.push(day);
 
         })
-        console.log(obj);
+        console.log(JSON.stringify({
+            "body": obj
+        }));
         //send this to php
-        fetch("/create", {
+        var url = '/create';
+
+        fetch("/savePlan", {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(obj)
+            body: JSON.stringify({
+                "body": obj
+            })
         })
+            .then(function (response) {
+                console.log(response.body)
+                return response.json();
+            }).then(function (result) {
+                console.log(result.body)
+                if (result.body)
+                    window.location.replace("/plans");
+                else
+                    alert("ERROR IN CREATIN PLAN. PLEASE RELOAD")
+            });
     }
 })

@@ -7,11 +7,12 @@ Router::get("index", "DefaultController");
 Router::get('register', 'DefaultController');
 Router::get('login', 'DefaultController');
 Router::get('create', 'DefaultController');
+Router::get('plans', 'PlanController');
 Router::get('statistics', 'DefaultController');
 Router::get('training', 'DefaultController');
 Router::get('logout', 'SecurityController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
-//Router::post('create', 'SecurityController');
+Router::post('savePlan', 'PlanController');
 
 Router::run($path);

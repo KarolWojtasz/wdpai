@@ -15,6 +15,7 @@ class DefaultController extends AppController
         $this->checkLogin();
         $this->render("index");
     }
+
     public function register()
     {
         $this->render("register");

@@ -2,7 +2,7 @@
 
 require_once "source/controllers/DefaultController.php";
 require_once "source/controllers/SecurityController.php";
-
+require_once "source/controllers/PlanController.php";
 class Router
 {
   public static $routes;
