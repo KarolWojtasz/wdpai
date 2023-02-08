@@ -21,8 +21,11 @@ class PlanController extends AppController
     }
     public function plans()
     {
-        if ($_SESSION["user_id"] == null)
-            return $this->render('login', ['messages' => ['Firstly login to service']]);
+        if ($_SESSION["user_id"] == null) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
+
         $plans = $this->getPlans();
         $this->render("plans", ["plans" => $plans]);
     }
@@ -36,8 +39,10 @@ class PlanController extends AppController
 
     public function training()
     {
-        if ($_SESSION["user_id"] == null)
-            return $this->render('login', ['messages' => ['Firstly login to service']]);
+        if ($_SESSION["user_id"] == null) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
         $plans = $this->getPlans();
         $this->render("training", ["plans" => $plans]);
     }

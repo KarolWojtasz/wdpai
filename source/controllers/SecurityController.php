@@ -59,15 +59,4 @@ class SecurityController extends AppController
         unset($_SESSION["user_username"]);
         return $this->render('login', ['messages' => ['You\'ve been logged out!']]);
     }
-
-    public function create()
-    {
-        echo ("XD");
-        if (!$this->isPost()) {
-            return $this->render('create');
-        }
-
-        $v = json_decode(stripslashes($_POST["data"]));
-        var_dump($_POST);
-    }
 }

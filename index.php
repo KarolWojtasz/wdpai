@@ -15,5 +15,6 @@ Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('savePlan', 'PlanController');
 Router::post('saveTraining', 'PlanController');
+Router::get('', 'DefaultController');
 
 Router::run($path);

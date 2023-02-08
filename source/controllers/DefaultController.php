@@ -5,8 +5,10 @@ class DefaultController extends AppController
 {
     public function checkLogin()
     {
-        if ($_SESSION["user_id"] == null)
-            return $this->render('login', ['messages' => ['Firstly login to service']]);
+        if ($_SESSION["user_id"] == null) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
     }
 
 

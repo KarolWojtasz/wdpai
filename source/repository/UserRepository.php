@@ -26,7 +26,6 @@ class UserRepository extends Repository
             INSERT INTO users (username, password)
             VALUES ('" . $user->getUsername() . "', '" . $user->getPassword() . "')
         ");
-        echo $result;
         if (!$result) {
             return false;
         } else {
