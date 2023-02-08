@@ -21,6 +21,7 @@
 
 
         </div>
+
         <div id="buttonsContainer">
             <button id="addDay">+ Add next training day</button>
             <button id="savePlan">Save workout plan</button>

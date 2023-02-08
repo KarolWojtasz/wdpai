@@ -1,5 +1,5 @@
 #container {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 section {
@@ -9,7 +9,6 @@ section {
 }
 
 #formContainer {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,6 +31,7 @@ h2 {
     font-size: 50px;
     height: 25%;
     margin: 0;
+    width: auto;
 }
 
 #formContainer input {
@@ -58,9 +58,76 @@ h2 {
     height: 70vh;
     background-color: #E1C5EF;
     border-radius: 35px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 600px) {
+    #container {
+        flex-direction: column;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    #formContainer input {
+        margin: 20px;
+        height: 50px;
+        width: 65%;
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 40px;
+        height: 25%;
+        margin: 0;
+        width: auto;
+    }
+
+    #whiteBox {
+
+        min-height: 450px;
+        margin-top: 25px;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #container {
+        flex-direction: column;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    #formContainer input {
+        margin: 20px;
+        height: 50px;
+        width: 65%;
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 40px;
+        height: 25%;
+        margin: 0;
+        width: auto;
+    }
+
+    #whiteBox {
+
+        height: 50vh;
+        margin-top: 25px;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
 }

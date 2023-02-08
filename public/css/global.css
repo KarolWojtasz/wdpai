@@ -48,6 +48,7 @@ nav {
     background-color: #E1C5EF;
     padding-bottom: 10px;
     padding-top: 10px;
+    z-index: 999;
 }
 
 
@@ -72,4 +73,14 @@ nav a,
     padding-left: 30px;
     padding-right: 30px;
     margin-top: auto;
+}
+
+@media (max-width: 600px) {
+
+    nav a,
+    #logo {
+
+        font-size: 20px;
+    }
+
 }

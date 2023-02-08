@@ -90,7 +90,8 @@ document.getElementById("confirmPlan").addEventListener("click", function () {
 function loadExercise(exercises, index) {
     document.getElementById("exercisename").innerText = exercises[index].name;
     //tu foto
-    //document.getElementById("exerciseImage").innerText = tmp;
+    document.getElementById("exerciseImage").src = 'public/img/exercises/' + exercises[index].name.toString().replaceAll(" ", "_").replaceAll("/", "_") + '/images/0.jpg';
+
     document.getElementById("reps").innerHTML = "<h6>Reps done</h6>";
     document.getElementById("weight").innerHTML = "<h6>Weight</h6>";
 

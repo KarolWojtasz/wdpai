@@ -22,7 +22,7 @@
 
                     <section class="readyDay">
                         <input type="text" value="<?php echo $trainingDayName; ?>" placeholder="Training day title..." class="dayTitle" readonly="">
-                        <div class="row">
+                        <div class="setsAndReps">
                             <div></div>
                             <div></div>
                             <div>Sets</div>
@@ -30,7 +30,7 @@
                         </div>
                         <?php foreach ($exercises as $exercise) : ?>
                             <div class="row">
-                                <img src="./public/img/exercises/3/4 Sit-Up">
+                                <img src="public/img/exercises/<?php echo str_replace("/", "_", str_replace(" ", "_", explode(";", $exercise)[0])); ?>/images/0.jpg">
                                 <select id="selectExercise" disabled="disabled">
                                     <option><?php echo explode(";", $exercise)[0]; ?></option>
                                 </select>

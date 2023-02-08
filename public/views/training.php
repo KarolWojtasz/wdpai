@@ -18,7 +18,7 @@
 
         <h2>Workout in progress</h2>
         <div id="selectContainer">
-            <h3>Select trining day and start training</h3>
+            <h3>Select training day and start training</h3>
             <input id="allPlans" value='<?php echo json_encode($plans); ?>' type="hidden" />
             <select id="selectDay">
                 <?php foreach ($plans as $planName => $trainingDays) : ?>

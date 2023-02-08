@@ -72,8 +72,9 @@ document.getElementById("addDay").addEventListener("click", function () {
         saveDay.value = "Save training day"
         saveDay.innerText = "Save training day"
         saveDay.addEventListener("click", function () {
-            if (this.parentElement.children[0].value != "") {
+            if (this.parentElement.children[0].value != "" && Array.prototype.slice.call(this.parentElement.children).length > 4) {
                 var children = Array.prototype.slice.call(this.parentElement.children);
+
                 children.forEach(child => {
                     if (child.className == "dayTitle") {
                         child.readOnly = true;
@@ -84,7 +85,9 @@ document.getElementById("addDay").addEventListener("click", function () {
                         child.children[child.children.length - 1].remove();
                         child.children[0].setAttribute('disabled', 'disabled')
                         let img = document.createElement("img");
-                        img.src = "./public/img/exercises/" + child.children[0].value;
+                        img.src = 'public/img/exercises/' + child.children[0].value.toString().replaceAll(" ", "_").replaceAll("/", "_") + '/images/0.jpg';
+
+
                         child.insertBefore(img, child.children[0]);
                     }
                 })

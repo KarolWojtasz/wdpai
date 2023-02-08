@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liftology</title>
     <link rel="stylesheet" type="text/css" href="public/css/global.css">
+    <link rel="stylesheet" type="text/css" href="public/css/create.css">
+    <link rel="stylesheet" type="text/css" href="public/css/index.css">
 </head>
 
 <body>
     <?php include("nav.php"); ?>
-    <section></section>
-    <footer></footer>
+    <div id="container">
+        <a href="/plans">See your training plans or create new one</a>
+        <a href="/training">Start training session and save your results</a>
+    </div>
 </body>
 
 </html>
