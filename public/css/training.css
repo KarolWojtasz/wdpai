@@ -3,10 +3,21 @@
     height: 70vh;
     background-color: #E1C5EF;
     border-radius: 35px;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    display: none;
+}
+
+#selectContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#selectContainer h3 {
+    font-size: 30px;
+    color: white;
 }
 
 #container {
@@ -78,14 +89,16 @@ h4 {
 }
 
 
-#reps p,
-#weight p {
+#reps input,
+#weight input {
     font-size: 25px;
     border: 1px solid black;
+    background-color: #E1C5EF;
+    text-align: center;
     border-radius: 2px;
     display: block;
     margin: 10px;
-    width: 40px;
+    width: 140px;
 }
 
 #reps h6,
@@ -119,4 +132,17 @@ button {
     width: 100px;
     border: 1px solid grey;
     color: grey;
+}
+
+select {
+    margin: 10px;
+    height: 50px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: #E1C5EF;
+    border: 2px solid black;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
 }

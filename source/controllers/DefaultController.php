@@ -34,9 +34,4 @@ class DefaultController extends AppController
         $this->checkLogin();
         $this->render("statistics");
     }
-    public function training()
-    {
-        $this->checkLogin();
-        $this->render("training");
-    }
 }

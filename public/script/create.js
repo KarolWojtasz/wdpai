@@ -133,8 +133,7 @@ document.getElementById("savePlan").addEventListener("click", function () {
         console.log(JSON.stringify({
             "body": obj
         }));
-        //send this to php
-        var url = '/create';
+
 
         fetch("/savePlan", {
             method: "POST",
@@ -149,11 +148,10 @@ document.getElementById("savePlan").addEventListener("click", function () {
                 console.log(response.body)
                 return response.json();
             }).then(function (result) {
-                console.log(result.body)
                 if (result.body)
                     window.location.replace("/plans");
                 else
-                    alert("ERROR IN CREATIN PLAN. PLEASE RELOAD")
+                    alert("ERROR IN CREATING PLAN. PLEASE RELOAD")
             });
     }
 })

@@ -21,15 +21,39 @@ class PlanController extends AppController
     }
     public function plans()
     {
-
-        $this->render("plans");
-        $this->getPlans();
+        if ($_SESSION["user_id"] == null)
+            return $this->render('login', ['messages' => ['Firstly login to service']]);
+        $plans = $this->getPlans();
+        $this->render("plans", ["plans" => $plans]);
     }
     public function getPlans()
     {
         $planRepository = new PlanRepository();
 
         $result = $planRepository->getPlans();
-        var_dump($result);
+        return $result;
+    }
+
+    public function training()
+    {
+        if ($_SESSION["user_id"] == null)
+            return $this->render('login', ['messages' => ['Firstly login to service']]);
+        $plans = $this->getPlans();
+        $this->render("training", ["plans" => $plans]);
+    }
+    public function saveTraining()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        if ($contentType == "application/json") {
+            $body = trim(file_get_contents("php://input"));
+
+            $planRepository = new PlanRepository();
+
+            $result = $planRepository->insertTraining($body);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode(array("body" =>  $result));
+        }
     }
 }

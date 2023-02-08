@@ -34,6 +34,49 @@ class PlanRepository extends Repository
             return true;
     }
 
+    public function insertTraining(string $json)
+    {
+
+        $decoded = json_decode($json, true);
+
+        $result  = pg_query($this->connection, "SELECT training_days.name AS training_day_name,
+        exercises.name AS exercise_name, plan_exercises.sets, plan_exercises.reps,plan_exercises.id
+        FROM plans
+        INNER JOIN training_days ON training_days.plan_id = plans.id
+        INNER JOIN plan_exercises ON plan_exercises.training_day_id = training_days.id
+        INNER JOIN exercises ON exercises.id = plan_exercises.exercise_id
+        WHERE plans.user_id = '" . $_SESSION["user_id"] . "' and plans.name = '" . $decoded["body"]["planName"] . "' and training_days.name = '" . $decoded["body"]["dayName"] . "'
+        ORDER BY training_day_name");
+        $exercisesID = [];
+
+        while ($row = pg_fetch_assoc($result)) {
+            array_push($exercisesID, $row["id"] . ";" . $row["exercise_name"]);
+        }
+        try {
+            foreach ($decoded["body"]["exercises"] as $exercise) {
+
+                foreach ($exercise["reps"] as $set) {
+                    $id = "0";
+
+
+                    foreach ($exercisesID as $string) {
+
+                        if ($exercise["name"] == explode(";", $string)[1]) {
+                            $id = explode(";", $string)[0];
+                        }
+                    }
+
+                    $result  = pg_query($this->connection, "INSERT INTO workout_sessions (plan_exercise_id, timestamp, reps, weight) 
+                    VALUES ('" . $id . "',current_timestamp,'" . explode(";", $set)[0] . "','" . explode(";", $set)[1] . "')");
+                }
+            }
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+
     public function getPlans()
     {
 
@@ -45,22 +88,21 @@ class PlanRepository extends Repository
             INNER JOIN plan_exercises ON plan_exercises.training_day_id = training_days.id
             INNER JOIN exercises ON exercises.id = plan_exercises.exercise_id
             WHERE plans.user_id = '" . $_SESSION["user_id"] . "'
+            ORDER BY plans_name, training_day_name
         ");
-        $names = [];
-        $plans = array();
-        $num = 0;
-        $allExercises = [];
-        while ($row = pg_fetch_assoc($result)) {
-            if (!in_array($row['plans_name'], $names)) {
-                $allExercises[$num] = new Plan($row['plans_name'], []);
-                //array_push($allExercises[$num]->$trainingDays, new Training_days($row['training_days_name'], []));
 
-                $plans[$num]["name"] = $row['plans_name'];
-                $num += 1;
+        $resultArray = [];
+
+        while ($row = pg_fetch_assoc($result)) {
+            if (!isset($resultArray[$row["plans_name"]])) {
+                $resultArray[$row["plans_name"]] = [];
             }
-            //array_push($allExercises, new Exercise_plan($row['plans_name'], intval($row['sets']), intval($row['reps'])));
+            if (!isset($resultArray[$row["plans_name"]][$row["training_day_name"]])) {
+                $resultArray[$row["plans_name"]][$row["training_day_name"]] = [];
+            }
+            array_push($resultArray[$row["plans_name"]][$row["training_day_name"]], $row["exercise_name"] . ";" . $row["sets"] . ";" . $row["reps"]);
         }
 
-        return $allExercises;
+        return $resultArray;
     }
 }

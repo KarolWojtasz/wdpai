@@ -9,10 +9,11 @@ Router::get('login', 'DefaultController');
 Router::get('create', 'DefaultController');
 Router::get('plans', 'PlanController');
 Router::get('statistics', 'DefaultController');
-Router::get('training', 'DefaultController');
+Router::get('training', 'PlanController');
 Router::get('logout', 'SecurityController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('savePlan', 'PlanController');
+Router::post('saveTraining', 'PlanController');
 
 Router::run($path);
